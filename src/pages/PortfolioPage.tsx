@@ -285,7 +285,11 @@ export default function PortfolioPage() {
             title="Análisis de requerimientos"
             lead="Requerimientos funcionales, no funcionales e historias de usuario con criterios de aceptación."
           >
-            <RequirementsPanel />
+            <h3 className="portfolio-subheading">Requerimientos funcionales y no funcionales</h3>
+            <RequirementsPanel mode="requirements" />
+
+            <h3 className="portfolio-subheading">Historias de usuario</h3>
+            <RequirementsPanel mode="stories" />
           </SectionBlock>
 
           <SectionBlock
@@ -319,11 +323,8 @@ export default function PortfolioPage() {
               </table>
             </div>
 
-            <div className="portfolio-screenshot-placeholder">
-              Espacio reservado para capturas del producto (se agregarán posteriormente).
-            </div>
-
-            <h3 className="portfolio-subheading">Módulos frontend</h3>
+            <h3 className="portfolio-subheading">Descripción de módulos</h3>
+            <h4 className="portfolio-subheading portfolio-subheading--minor">Frontend</h4>
             <div className="portfolio-table-wrap">
               <table className="portfolio-table">
                 <thead>
@@ -343,7 +344,7 @@ export default function PortfolioPage() {
               </table>
             </div>
 
-            <h3 className="portfolio-subheading">Microservicios backend</h3>
+            <h4 className="portfolio-subheading portfolio-subheading--minor">Backend (microservicios)</h4>
             <div className="portfolio-table-wrap">
               <table className="portfolio-table">
                 <thead>
@@ -382,7 +383,15 @@ export default function PortfolioPage() {
             title="Pruebas de usabilidad"
             lead="Resultados de UAT con usuarios reales, evaluación heurística y retroalimentación."
           >
-            <h3 className="portfolio-subheading">Participantes</h3>
+            <h3 className="portfolio-subheading">Metodología</h3>
+            <ul className="portfolio-list">
+              {USABILITY_METHODOLOGY.map((m) => (
+                <li key={m}>{m}</li>
+              ))}
+            </ul>
+
+            <h3 className="portfolio-subheading">Resultados obtenidos</h3>
+            <h4 className="portfolio-subheading portfolio-subheading--minor">Participantes</h4>
             <div className="portfolio-table-wrap portfolio-table-wrap--scroll">
               <table className="portfolio-table">
                 <thead>
@@ -410,14 +419,7 @@ export default function PortfolioPage() {
               </table>
             </div>
 
-            <h3 className="portfolio-subheading">Metodología</h3>
-            <ul className="portfolio-list">
-              {USABILITY_METHODOLOGY.map((m) => (
-                <li key={m}>{m}</li>
-              ))}
-            </ul>
-
-            <h3 className="portfolio-subheading">Resultados globales</h3>
+            <h4 className="portfolio-subheading portfolio-subheading--minor">Resumen global</h4>
             <div className="portfolio-two-col">
               <div className="portfolio-meta-item">
                 <span className="portfolio-meta-item__label">50 ejecuciones (5 × 10 tareas)</span>
@@ -431,7 +433,7 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <h3 className="portfolio-subheading">Tasa de éxito por tarea</h3>
+            <h4 className="portfolio-subheading portfolio-subheading--minor">Tasa de éxito por tarea</h4>
             <div className="portfolio-table-wrap">
               <table className="portfolio-table">
                 <thead>
@@ -455,7 +457,7 @@ export default function PortfolioPage() {
               </table>
             </div>
 
-            <h3 className="portfolio-subheading">Tiempos por participante (minutos)</h3>
+            <h4 className="portfolio-subheading portfolio-subheading--minor">Tiempos por participante (minutos)</h4>
             <div className="portfolio-table-wrap portfolio-table-wrap--scroll">
               <table className="portfolio-table">
                 <thead>
@@ -489,7 +491,7 @@ export default function PortfolioPage() {
               </table>
             </div>
 
-            <h3 className="portfolio-subheading">Cuestionario posterior (Likert 1–5)</h3>
+            <h4 className="portfolio-subheading portfolio-subheading--minor">Cuestionario posterior (Likert 1–5)</h4>
             <div className="portfolio-table-wrap">
               <table className="portfolio-table">
                 <thead>
@@ -515,7 +517,7 @@ export default function PortfolioPage() {
               </table>
             </div>
 
-            <h3 className="portfolio-subheading">Evaluación heurística (Nielsen)</h3>
+            <h4 className="portfolio-subheading portfolio-subheading--minor">Evaluación heurística (Nielsen)</h4>
             <div className="portfolio-table-wrap">
               <table className="portfolio-table">
                 <thead>
@@ -539,7 +541,7 @@ export default function PortfolioPage() {
               </table>
             </div>
 
-            <h3 className="portfolio-subheading">Problemas priorizados</h3>
+            <h4 className="portfolio-subheading portfolio-subheading--minor">Problemas priorizados</h4>
             <ul className="portfolio-priority-list">
               {USABILITY_PRIORITIES.map((p) => (
                 <li key={p.id} className="portfolio-priority-item">
@@ -555,6 +557,7 @@ export default function PortfolioPage() {
             </ul>
 
             <h3 className="portfolio-subheading">Retroalimentación de usuarios finales</h3>
+            <h4 className="portfolio-subheading portfolio-subheading--minor">Reportes individuales</h4>
             <div className="portfolio-testimonial-grid">
               {TESTIMONIALS.map((t) => (
                 <article key={t.participant} className="portfolio-testimonial">
@@ -568,7 +571,7 @@ export default function PortfolioPage() {
               ))}
             </div>
 
-            <h3 className="portfolio-subheading">Temas recurrentes (cuestionario abierto)</h3>
+            <h4 className="portfolio-subheading portfolio-subheading--minor">Temas recurrentes (cuestionario abierto)</h4>
             <div className="portfolio-table-wrap">
               <table className="portfolio-table">
                 <thead>

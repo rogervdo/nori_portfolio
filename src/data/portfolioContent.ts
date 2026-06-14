@@ -116,17 +116,6 @@ export interface UatTimeRow {
   average: string;
 }
 
-export interface UatTimeRow {
-  task: string;
-  focus: string;
-  p01: string;
-  p02: string;
-  p03: string;
-  p04: string;
-  p05: string;
-  average: string;
-}
-
 export interface EdtNode {
   label: string;
   children?: EdtNode[];

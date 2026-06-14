@@ -5,9 +5,14 @@ import {
   userStoriesDetailed,
 } from "../data/portfolioContent";
 
-type Tab = "functional" | "non-functional" | "stories";
+type Tab = "functional" | "non-functional";
+type PanelMode = "requirements" | "stories";
 
-export default function RequirementsPanel() {
+interface RequirementsPanelProps {
+  mode: PanelMode;
+}
+
+export default function RequirementsPanel({ mode }: RequirementsPanelProps) {
   const [tab, setTab] = useState<Tab>("functional");
   const [query, setQuery] = useState("");
 
@@ -51,29 +56,24 @@ export default function RequirementsPanel() {
   return (
     <div className="portfolio-req-panel">
       <div className="portfolio-req-panel__toolbar">
-        <div className="portfolio-req-tabs">
-          <button
-            type="button"
-            className={`portfolio-req-tabs__btn${tab === "functional" ? " is-active" : ""}`}
-            onClick={() => setTab("functional")}
-          >
-            Funcionales ({functionalRequirements.length})
-          </button>
-          <button
-            type="button"
-            className={`portfolio-req-tabs__btn${tab === "non-functional" ? " is-active" : ""}`}
-            onClick={() => setTab("non-functional")}
-          >
-            No funcionales ({nonFunctionalRequirements.length})
-          </button>
-          <button
-            type="button"
-            className={`portfolio-req-tabs__btn${tab === "stories" ? " is-active" : ""}`}
-            onClick={() => setTab("stories")}
-          >
-            Historias ({userStoriesDetailed.length})
-          </button>
-        </div>
+        {mode === "requirements" && (
+          <div className="portfolio-req-tabs">
+            <button
+              type="button"
+              className={`portfolio-req-tabs__btn${tab === "functional" ? " is-active" : ""}`}
+              onClick={() => setTab("functional")}
+            >
+              Funcionales ({functionalRequirements.length})
+            </button>
+            <button
+              type="button"
+              className={`portfolio-req-tabs__btn${tab === "non-functional" ? " is-active" : ""}`}
+              onClick={() => setTab("non-functional")}
+            >
+              No funcionales ({nonFunctionalRequirements.length})
+            </button>
+          </div>
+        )}
         <input
           type="search"
           className="portfolio-req-search"
@@ -84,7 +84,7 @@ export default function RequirementsPanel() {
         />
       </div>
 
-      {tab === "functional" && (
+      {mode === "requirements" && tab === "functional" && (
         <ul className="portfolio-req-list">
           {filteredFunctional.map((r) => (
             <li key={r.id} className="portfolio-req-card">
@@ -95,7 +95,7 @@ export default function RequirementsPanel() {
         </ul>
       )}
 
-      {tab === "non-functional" && (
+      {mode === "requirements" && tab === "non-functional" && (
         <ul className="portfolio-req-list">
           {filteredNonFunctional.map((r) => (
             <li key={r.id} className="portfolio-req-card">
@@ -109,7 +109,7 @@ export default function RequirementsPanel() {
         </ul>
       )}
 
-      {tab === "stories" && (
+      {mode === "stories" && (
         <ul className="portfolio-req-list">
           {filteredStories.map((s) => (
             <li key={s.id} className="portfolio-req-card portfolio-req-card--story">
