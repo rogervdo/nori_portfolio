@@ -1,0 +1,53 @@
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/500.css";
+@import "@fontsource/roboto/700.css";
+
+:root {
+  --nori-brand: #ec0029;
+  --nori-brand-hover: #c8001f;
+  --nori-brand-foreground: #ffffff;
+  --nori-shadow-toolbar: 0 2px 6px rgba(15, 23, 42, 0.06);
+  --nori-shadow-card: 0 3px 8px rgba(15, 23, 42, 0.072);
+  --nori-shadow-card-hover: 0 4px 12px rgba(15, 23, 42, 0.13);
+  --nori-shadow-nav: 0 3px 4px rgba(0, 0, 0, 0.11);
+  --line-border: #d1dae3;
+  --line-border-muted: #e2e8f0;
+  --dashboard-text-muted: #64748b;
+  --dashboard-font-hero: 1.5rem;
+  --dashboard-font-lead: 0.9rem;
+  --dashboard-font-section: 1.05rem;
+  --dashboard-font-ui: 0.875rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #0f172a;
+  background: #fafafa;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  color: var(--nori-brand);
+}
